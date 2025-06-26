@@ -42,14 +42,11 @@ const HomeContent = () => {
 };
 
 const App = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<HomeContent />} />
-      {/* Hobbies route removed */}
-      <Route path="/projectsandevents" element={<ProjectsAndEvents />} />
-      <Route path="/skillsandcertifications" element={<SkillsAndCertifications />} />
-    </Routes>
-  </BrowserRouter>
+  <Routes>
+    <Route path="/" element={<HomeContent />} />
+    <Route path="/projectsandevents" element={<ProjectsAndEvents />} />
+    <Route path="/skillsandcertifications" element={<SkillsAndCertifications />} />
+  </Routes>
 );
 
 export default App;
