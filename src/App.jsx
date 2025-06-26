@@ -42,10 +42,9 @@ const HomeContent = () => {
 };
 
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename="/Portfolio/">
     <Routes>
       <Route path="/" element={<HomeContent />} />
-      {/* Hobbies route removed */}
       <Route path="/projectsandevents" element={<ProjectsAndEvents />} />
       <Route path="/skillsandcertifications" element={<SkillsAndCertifications />} />
     </Routes>
