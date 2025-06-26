@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import ProjectsAndEvents from "./pages/ProjectsAndEvents";
 import SkillsAndCertifications from "./pages/SkillsAndCertifications";
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Others } from "./components";
+import { About, Contact, Experience, Hero, Navbar, Tech, StarsCanvas, Others } from "./components";
 
 // Helper component for the home page logic
 const HomeContent = () => {
@@ -42,9 +42,10 @@ const HomeContent = () => {
 };
 
 const App = () => (
-  <BrowserRouter basename="/Portfolio/">
+  <BrowserRouter>
     <Routes>
       <Route path="/" element={<HomeContent />} />
+      {/* Hobbies route removed */}
       <Route path="/projectsandevents" element={<ProjectsAndEvents />} />
       <Route path="/skillsandcertifications" element={<SkillsAndCertifications />} />
     </Routes>
