@@ -191,7 +191,7 @@ const Navbar = () => {
               {resumeDropdown && (
                 <div className="absolute right-0 mt-2 w-44 bg-[#23234d] rounded-lg shadow-lg z-50">
                   <a
-                    href="/resume.pdf"
+                    href="./resume.pdf"
                     download
                     className="block px-4 py-2 text-white hover:bg-[#383E56] rounded-t-lg"
                     target="_blank"
@@ -201,7 +201,7 @@ const Navbar = () => {
                     English Resume
                   </a>
                   <a
-                    href="/resume-chinese.pdf"
+                    href="./resume-chinese.pdf"
                     download
                     className="block px-4 py-2 text-white hover:bg-[#383E56] rounded-b-lg"
                     target="_blank"
