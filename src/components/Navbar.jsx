@@ -110,7 +110,7 @@ const Navbar = () => {
         ${styles.paddingX}
         w-full flex items-center py-5 fixed top-0 left-0
         bg-primary bg-opacity-90 border-b border-gray-700
-        backdrop-blur z-50
+        backdrop-blur z-[9999]
       `}
       style={{ backdropFilter: "blur(6px)" }}
     >
@@ -265,7 +265,7 @@ const Navbar = () => {
           <div
             className={`
               ${!toggle ? "hidden" : "flex"}
-              p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[160px] z-10 rounded-xl
+              p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[160px] z-50 rounded-xl
             `}
           >
             <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>

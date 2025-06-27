@@ -20,14 +20,15 @@ const HomeContent = () => {
 
   return (
     <div className='relative z-0 bg-primary min-h-screen overflow-hidden'>
-      {/* Background image only for navbar and hero */}
-      <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-        <Navbar />
-        <Hero />
-      </div>
       {/* Stars background for the whole page */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <StarsCanvas />
+      </div>
+      {/* Navbar OUTSIDE of z-10 container */}
+      <Navbar />
+      {/* Background image only for hero */}
+      <div className='relative z-10 bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+        <Hero />
       </div>
       {/* Main content */}
       <div className='relative z-20'>
@@ -45,7 +46,6 @@ const App = () => (
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<HomeContent />} />
-      {/* Hobbies route removed */}
       <Route path="/projectsandevents" element={<ProjectsAndEvents />} />
       <Route path="/skillsandcertifications" element={<SkillsAndCertifications />} />
     </Routes>
