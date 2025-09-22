@@ -1,13 +1,18 @@
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
+    <section className="relative w-full h-screen mx-auto">
+      {/* Canvas as background */}
+      <div className="absolute inset-0 z-0">
+        <ComputersCanvas />
+      </div>
+
+      {/* Text content below navbar */}
       <div
-        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`relative z-10 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5 h-full pt-32 pointer-events-none`}
       >
         <div className='flex flex-col justify-center items-center mt-5'>
           <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
@@ -20,14 +25,12 @@ const Hero = () => {
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             I am a Developer, <br className='sm:block hidden' />
-            Data Analyst and UI/UX Designer
+            Data Analyst, and UI/UX Designer
           </p>
         </div>
       </div>
 
-      <ComputersCanvas />
-
-      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
+      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center z-10'>
         <a href='#about'>
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div

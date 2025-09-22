@@ -6,12 +6,16 @@ import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { useNavigate } from "react-router-dom";
 
+// Import images directly
+import projectsAndEventsImg from "../assets/images/projectsandevents.jpg";
+import skillsAndCertificationsImg from "../assets/images/skillsandcertifications.jpg";
+
 // Sections for "Others" page (Hobbies removed)
 const othersSections = [
   {
     name: "Projects & Events",
     description: "See my projects and event highlights.",
-    image: "src/assets/images/projectsandevents.jpg",
+    image: projectsAndEventsImg,
     link: "/projectsandevents",
     tags: [
       { name: "projects", color: "text-purple-400" },
@@ -21,7 +25,7 @@ const othersSections = [
   {
     name: "Skills & Certifications",
     description: "View my skills and certifications.",
-    image: "src/assets/images/skillsandcertifications.jpg",
+    image: skillsAndCertificationsImg,
     link: "/skillsandcertifications",
     tags: [
       { name: "skills", color: "text-yellow-400" },
