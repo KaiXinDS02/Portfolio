@@ -9,7 +9,7 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [resumeDropdown, setResumeDropdown] = useState(false);
+  // const [resumeDropdown, setResumeDropdown] = useState(false);
   const [translateDropdown, setTranslateDropdown] = useState(false);
   const [translateReady, setTranslateReady] = useState(false);
   const resumeDropdownRef = useRef(null);
