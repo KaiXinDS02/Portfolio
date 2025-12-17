@@ -9,10 +9,8 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [resumeDropdown, setResumeDropdown] = useState(false);
   const [translateDropdown, setTranslateDropdown] = useState(false);
   const [translateReady, setTranslateReady] = useState(false);
-  const resumeDropdownRef = useRef(null);
   const translateDropdownRef = useRef(null);
 
   useEffect(() => {
@@ -70,12 +68,6 @@ const Navbar = () => {
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        resumeDropdownRef.current &&
-        !resumeDropdownRef.current.contains(event.target)
-      ) {
-        setResumeDropdown(false);
-      }
       if (
         translateDropdownRef.current &&
         !translateDropdownRef.current.contains(event.target)
@@ -170,50 +162,7 @@ const Navbar = () => {
                 Skills & Certifications
               </Link>
             </li>
-            {/* Resume Dropdown */}
-            <li className="relative" ref={resumeDropdownRef}>
-              <button
-                className="text-secondary hover:text-white text-[18px] font-medium flex items-center gap-1"
-                onClick={() => setResumeDropdown((prev) => !prev)}
-                type="button"
-              >
-                Resume
-                <svg
-                  className={`w-4 h-4 ml-1 transition-transform ${resumeDropdown ? "rotate-180" : ""}`}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {resumeDropdown && (
-                <div className="absolute right-0 mt-2 w-44 bg-[#23234d] rounded-lg shadow-lg z-50">
-                  <a
-                    href="resume.pdf"
-                    download
-                    className="block px-4 py-2 text-white hover:bg-[#383E56] rounded-t-lg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setResumeDropdown(false)}
-                  >
-                    English Resume
-                  </a>
-                  <a
-                    href="resume-chinese.pdf"
-                    download
-                    className="block px-4 py-2 text-white hover:bg-[#383E56] rounded-b-lg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setResumeDropdown(false)}
-                  >
-                    中文简历
-                  </a>
-                </div>
-              )}
-            </li>
-            {/* Translate Dropdown - placed after Resume */}
+            {/* Translate Dropdown */}
             <li className="relative" ref={translateDropdownRef}>
               <button
                 className="text-secondary hover:text-white text-[18px] font-medium flex items-center gap-1"
@@ -312,55 +261,6 @@ const Navbar = () => {
                 >
                   Skills & Certifications
                 </Link>
-              </li>
-              {/* Resume Dropdown for Mobile */}
-              <li className="relative">
-                <button
-                  className="text-secondary hover:text-white text-[16px] font-medium flex items-center gap-1"
-                  onClick={() => setResumeDropdown((prev) => !prev)}
-                  type="button"
-                >
-                  Resume
-                  <svg
-                    className={`w-4 h-4 ml-1 transition-transform ${resumeDropdown ? "rotate-180" : ""}`}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {resumeDropdown && (
-                  <div className="absolute right-0 mt-2 w-44 bg-[#23234d] rounded-lg shadow-lg z-50">
-                    <a
-                      href="resume.pdf"
-                      download
-                      className="block px-4 py-2 text-white hover:bg-[#383E56] rounded-t-lg"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => {
-                        setResumeDropdown(false);
-                        setToggle(false);
-                      }}
-                    >
-                      English Resume
-                    </a>
-                    <a
-                      href="resume-chinese.pdf"
-                      download
-                      className="block px-4 py-2 text-white hover:bg-[#383E56] rounded-b-lg"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => {
-                        setResumeDropdown(false);
-                        setToggle(false);
-                      }}
-                    >
-                      中文简历
-                    </a>
-                  </div>
-                )}
               </li>
               {/* Translate Dropdown for Mobile */}
               <li className="relative" ref={translateDropdownRef}>

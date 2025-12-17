@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import ProjectsAndEvents from "./pages/ProjectsAndEvents";
 import SkillsAndCertifications from "./pages/SkillsAndCertifications";
@@ -48,13 +48,11 @@ const HomeContent = () => {
 };
 
 const App = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<HomeContent />} />
-      <Route path="/projectsandevents" element={<ProjectsAndEvents />} />
-      <Route path="/skillsandcertifications" element={<SkillsAndCertifications />} />
-    </Routes>
-  </BrowserRouter>
+  <Routes>
+    <Route path="/" element={<HomeContent />} />
+    <Route path="/projectsandevents" element={<ProjectsAndEvents />} />
+    <Route path="/skillsandcertifications" element={<SkillsAndCertifications />} />
+  </Routes>
 );
 
 export default App;
